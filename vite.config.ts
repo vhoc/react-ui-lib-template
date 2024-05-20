@@ -11,7 +11,10 @@ export default defineConfig({
   plugins: [
    react(),
    libInjectCss(),
-   dts({ include: ['lib'], exclude: ['src'] })],
+   dts({
+      include: ['lib'],
+      exclude: ['src', 'lib/**/**.stories.ts', 'lib/**/**.stories.js']
+   })],
   build: {
    lib: {
       entry: resolve( __dirname, 'lib/main.ts' ),
@@ -22,7 +25,12 @@ export default defineConfig({
       external: ['react', 'react/jsx-runtime'],
       input: Object.fromEntries(
          glob.sync('lib/**/*.{ts, tsx}', {
-            ignore: ["lib/**/*.d.ts"],
+            ignore: [
+               "lib/**/*.d.ts",
+               "lib/**/*.stories.ts",
+               "lib/**/*.stories.tsx",
+               "lib/**/*.mdx"
+            ],
          }).map(file => [
             // The name of the entryu point
             // lib/nested/foo.ts becomes nested/foo
