@@ -1,4 +1,4 @@
-# React UI library template + Typescript + Storybook
+# React + Typescript + Storybook UI component library template
 
 This template provides a minimal setup with everything you need to start development for a React/Typescript UI component library with Storybook documentation.
 
