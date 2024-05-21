@@ -1,3 +1,27 @@
 .button {
    background-color: blue;
+   color: white;
+   padding-inline: 2rem;
+   padding-block: 0.6rem;
+   border: none;
+   font-size: large;
+   border-radius: 6px;
+   cursor: pointer;
+}
+
+.button:hover {
+   background-color: lightskyblue;
+}
+
+.button:active {
+   background-color: darkblue;
+}
+
+.button:focus {
+   border: 2px solid lightslategray;
+}
+
+.button:disabled {
+   background-color: lightgray;
+   cursor: not-allowed;
 }
